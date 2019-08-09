@@ -1,6 +1,8 @@
 const SocketManager = require('./socketManager.js');
 const CommandRegister = require('./commandRegister.js');
 
+const WebSocket = require('ws');
+
 module.exports = class SocketClient {
   constructor(url) {
     this.commandRegister = new CommandRegister();
@@ -14,25 +16,25 @@ module.exports = class SocketClient {
       console.log('It will try to reconnect after 1s.');
       setTimeout(() => {
         this.client = new WebSocket(url);
-        this.client.onopen = openEvent;
-        this.client.onerror = errorEvent;
-        this.client.onclose = closeEvent;
+        this.client.on('open', openEvent);
+        this.client.on('error', errorEvent);
+        this.client.on('close', closeEvent);
       }, 1000);
     };
     const closeEvent = e => {
       console.log('The connection has been closed, and it will try to reconnect after 3s.')
       setTimeout(() => {
         this.client = new WebSocket(url);
-        this.client.onopen = openEvent;
-        this.client.onerror = errorEvent;
-        this.client.onclose = closeEvent;
+        this.client.on('open', openEvent);
+        this.client.on('error', errorEvent);
+        this.client.on('close', closeEvent);
       }, 1000);
     }
 
     this.client = new WebSocket(url);
-    this.client.onopen = openEvent;
-    this.client.onerror = errorEvent;
-    this.client.onclose = closeEvent;
+    this.client.on('open', openEvent);
+    this.client.on('error', errorEvent);
+    this.client.on('close', closeEvent);
 
     this.customOpenEventList = [];
     this.onOpen.bind(this);

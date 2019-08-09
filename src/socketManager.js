@@ -12,7 +12,6 @@ module.exports = class SocketManager {
     }
 
     this.receive = (str) => {
-      str = str.data;
       console.log("Get the message from the server:", str);
 
       // Heart package check.
@@ -63,7 +62,7 @@ module.exports = class SocketManager {
       }
     }
 
-    conn.onmessage = this.receive;
+    conn.on('message', this.receive);
   }
 }
 
