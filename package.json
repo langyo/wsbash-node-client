@@ -1,0 +1,16 @@
+{
+  "name": "wsbash-node-client",
+  "version": "0.1.0",
+  "description": "A C/S data exchange tool library that based on WebSocket.",
+  "main": "./src/socketClient.js",
+  "scripts": {
+    "start": "node ./demo/example.js",
+    "test": "jest --watch"
+  },
+  "author": "langyo",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "jest": "^24.8.0",
+    "ws": "^7.1.1"
+  }
+}
