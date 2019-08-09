@@ -1,6 +1,6 @@
 # WebSocket Bash
 
-## (HTML5 Client)
+## (Node.js Client)
 
 [中文](README.md) | [English](README_eng.md)
 
@@ -12,8 +12,9 @@ Another libraries：
 
 | Language | Type | Location |
 | :-: | :-: | :-: |
-| JavaScript(Node.js) | Server | [wsbash-node-server](https://github.com/mcbbs-developer/wsbash-node-server) |
-| Java | Client | [wsbash-java-client](https://github.com/mcbbs-developer/wsbash-java-client) |
+| JavaScript(HTML5) | Client | [wsbash-h5-client](https://github.com/langyo/wsbash-h5-client) |
+| JavaScript(Node.js) | Server | [wsbash-node-server](https://github.com/langyo/wsbash-node-server) |
+| Java | Client | [wsbash-java-client](https://github.com/langyo/wsbash-java-client) |
 
 ## concept
 
